@@ -153,15 +153,18 @@ tl.from("#page1-content h1 span", {
 tl.to("#loader",{
   display:"none"
 })
-tl.from(".box", {
-  y:100,
-  duration:1,
-  stagger:0.5,
-  delay:1,
-  scrollTrigger:({
-    trigger:".box",
-    scroll:"body",
-    start:"top 75%",
-    end:"top 40%",
-  })
+gsap.from("#page3-elements .box", {
+  y: 200,
+  stagger: 1,
+  opacity: 0,
+  duration:2,
+  scale: 0,
+  scrollTrigger: {
+    trigger: ".box",
+    scroller: "#main",
+    start: "top 96%",
+    end: "top 70%",
+    markers: true,
+    scrub: 2,
+  },
 });
